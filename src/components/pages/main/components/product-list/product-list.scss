@@ -1,0 +1,17 @@
+
+.tableListHeaderActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemListActions {
+  a {
+    margin-right: 60px;
+  }
+  span {
+    text-decoration: underline;
+    color: #0258FF;
+    cursor: pointer;
+  }
+}

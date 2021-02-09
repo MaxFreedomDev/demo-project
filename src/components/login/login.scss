@@ -1,0 +1,97 @@
+
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(40, 40, 40, 0.05);
+  h2 {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 24px 0 0 0;
+  }
+  .error {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #dc3545;
+    background-color: #faa7a7;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 48px;
+    label {
+      margin-left: 16px;
+      margin-bottom: 8px;
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #828282;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    input {
+      border: 1px solid #E0E0E0;
+      border-radius: 4px;
+      height: 32px;
+      font-size: 16px;
+      color: #828282;
+      margin: 0 16px;
+      padding: 0 10px;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: #E0E0E0;
+      }
+    }
+    .is-invalid {
+      border: 1px solid #dc3545;
+    }
+    button {
+      margin: 24px auto 15px auto;
+    }
+    span {
+      color: #dc3545;
+      margin-left: 16px;
+      font-size: 12px;
+    }
+    a {
+      color: #0258FF;
+      font-size: 14px;
+      margin: 0 auto 22px auto;
+    }
+    .pass-wrapper {
+      display: flex;
+      position: relative;
+      input {
+        width: 100%;
+        padding-right: 28px;
+      }
+      i {
+        position: absolute;
+        top: 20%;
+        right: 7%;
+        color: #E0E0E0;
+        svg {
+          fill: #E0E0E0;
+          &:hover {
+          fill: #828282;
+        }
+        }
+      }
+      i:hover {
+        color: #E0E0E0;
+        cursor: pointer;
+      }
+    }
+  }
+}

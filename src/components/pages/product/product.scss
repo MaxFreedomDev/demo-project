@@ -1,0 +1,65 @@
+
+
+
+.headerProduct {
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 48px;
+  a {
+    font-size: 14px;
+  }
+}
+.aboutProduct {
+  display: flex;
+  margin-bottom: 40px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  padding-top: 24px;
+  .descriptionProduct {
+    margin-left: 30px;
+    h1 {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 767px) {
+      margin: 20px 0 0 0;
+      h1 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.optionsProduct {
+  display: flex;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+  .optionsProductItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    span {
+      font-size: 14px;
+      color: #828282;
+      margin-top: 7px;
+    }
+    label {
+      font-size: 16px;
+      color: black;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .optionsProductItemPrice {
+      font-size: 22px;
+      font-weight: 300;
+      color: black;
+    }
+  }
+  .optionsProductActions {
+    margin-left: 125px;
+    margin-top: auto;
+    @media (max-width: 400px) {
+      margin: 0 auto;
+    }
+  }
+}
