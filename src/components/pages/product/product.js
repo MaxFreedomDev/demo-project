@@ -10,7 +10,7 @@ import LoadableImage from "../../loadable-image/loadable-image";
 
 const Product = (props) => {
   const dispatch = useDispatch();
-  const car = useSelector((state) => state.products.car);
+  const item = useSelector((state) => state.products.item);
   const id = props.match.params.id;
 
   useEffect(() => {
@@ -24,37 +24,37 @@ const Product = (props) => {
         <Link to={MAIN_ROUTE}>Вернуться</Link>
       </div>
       <div className="aboutProduct">
-        <LoadableImage src={car.picture || noImage} alt={""} />
+        <LoadableImage src={item.picture || noImage} alt={""} />
         <div className="descriptionProduct">
-          <h3>{car.name}</h3>
-          <p>{car.description || "Описание отсутсвует"}</p>
+          <h3>{item.name}</h3>
+          <p>{item.description || "Описание отсутсвует"}</p>
         </div>
       </div>
       <div className="optionsProduct">
         <div className="optionsProductItem">
-          {car.properties &&
-            car.properties.length > 0 &&
-            car.properties.map((item) => (
-              <div key={item.property} className="optionsProductItem">
-                <label>{item.property}</label>
-                {Array.isArray(item.value) ? (
+          {item.properties &&
+            item.properties.length > 0 &&
+            item.properties.map((i) => (
+              <div key={i.property} className="optionsProductItem">
+                <label>{i.property}</label>
+                {Array.isArray(i.value) ? (
                   <select
-                    name={item.property}
+                    name={i.property}
                     className="arrowSelect productViewSelect"
                   >
-                    {item.value.map((el, index) => (
+                    {i.value.map((el, index) => (
                       <option key={index} value={el}>
                         {el}
                       </option>
                     ))}
                   </select>
                 ) : (
-                  <span>{item.value}</span>
+                  <span>{i.value}</span>
                 )}
               </div>
             ))}
           <label>Стоимость</label>
-          <span className="optionsProductItemPrice">{car.price}$</span>
+          <span className="optionsProductItemPrice">{item.price}$</span>
         </div>
         <div className="optionsProductActions">
           <CustomButton label="Беру!!!!" />

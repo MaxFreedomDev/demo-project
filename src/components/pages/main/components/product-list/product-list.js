@@ -65,7 +65,7 @@ export const handleSearch = (e, func) => {
 const ProductList = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const cars = useSelector((state) => state.products.cars);
+  const items = useSelector((state) => state.products.items);
   const loading = useSelector((state) => state.products.loading);
   const [open, setOpen] = useState(false);
   const [itemId, setItemId] = useState(null);
@@ -79,7 +79,7 @@ const ProductList = (props) => {
     TblHead,
     TblPagination,
     recordsAfterPagingAndSorting,
-  } = useTable(cars, headCells, filterFn);
+  } = useTable(items, headCells, filterFn);
 
   useEffect(() => {
     document.title = "Список товаров";

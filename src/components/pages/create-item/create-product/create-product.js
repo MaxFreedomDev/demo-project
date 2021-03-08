@@ -18,7 +18,7 @@ import Success from "../../../modal/success";
 
 const CreateProduct = (props) => {
   const dispatch = useDispatch();
-  const cars = useSelector((state) => state.products.cars);
+  const items = useSelector((state) => state.products.items);
   const url = useSelector((state) => state.products.url);
   const loading = useSelector((state) => state.products.loadingFile);
   const openDialogEvent = useSelector(
@@ -48,7 +48,7 @@ const CreateProduct = (props) => {
   const addProduct = (values) => {
     const item = {
       ...values,
-      id: cars.length > 0 ? cars[cars.length - 1].id + 1 : 0,
+      id: items.length > 0 ? items[items.length - 1].id + 1 : 0,
       date: formatDate(new Date()),
       picture: url || product.picture,
     };
@@ -75,7 +75,7 @@ const CreateProduct = (props) => {
           const errors = {};
           if (!values.name) {
             errors.name = "Поле не должно быть пустым";
-          } else if (!product && cars.find((el) => el?.name === values.name)) {
+          } else if (!product && items.find((el) => el?.name === values.name)) {
             errors.name = "Такое имя уже существует";
           }
           if (!values.price) {
